@@ -146,25 +146,25 @@ mysql-connector-python
 
 Displays a welcoming banner, project introduction, and navigation to prediction page.
 
-![Index](static/images/screenshots/index.png)
+![Index](static/images/index.png)
 
 ### 2. Prediction Form (predict.html)
 
 User form for entering details such as hours studied, previous scores, attendance, etc.
 
-![Predict](static/images/screenshots/predict.png)
+![Predict](static/images/predict.png)
 
 ### 3. Result Page (result.html)
 
 Displays predicted exam score based on entered inputs with styled results.
 
-![Result](static/images/screenshots/result.png)
+![Result](static/images/result.png)
 
 ### 4. XAMPP MySQL Setup
 
 Snapshot of phpMyAdmin showing `student_scores` database and `predictions` table.
 
-![XAMPP](static/images/screenshots/xampp.png)
+![XAMPP](static/images/xampp.png)
 
 > Store all screenshot images in: `static/images/screenshots/`
 

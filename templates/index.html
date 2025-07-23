@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Score Predictor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: url('{{ url_for('static', filename='images/banner.jpg') }}') no-repeat center center/cover;
+      filter: blur(0px) brightness(0.85);
+      z-index: -1;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      height: 70px;
+    }
+
+    .menu-btn {
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .main-text {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      max-width: 600px;
+      z-index: 2;
+      animation: fadeInUp 2s ease-out;
+    }
+
+    .main-text h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #222;
+      text-shadow: 1px 1px 2px #ccc;
+    }
+
+    .main-text p {
+      font-size: 20px;
+      line-height: 1.5;
+      color: #a9bab8ff;
+      text-shadow: 1px 1px 2px #111;
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(-50%);}
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -250px;
+      height: 100%;
+      width: 250px;
+      background-color: rgba(61, 128, 128, 0.9);
+      padding-top: 60px;
+      backdrop-filter: blur(12px);
+      transition: right 0.3s ease;
+      z-index: 4;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 16px;
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      border-bottom: 1px solid #555;
+      transition: background 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #709191ff;
+    }
+
+    .sidebar a.active {
+      background: rgba(185, 149, 149, 1);
+      backdrop-filter: blur(10px);
+      font-weight: bold;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: #eee;
+      font-size: 14px;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+    <button class="menu-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+  </header>
+
+  <div class="main-text">
+    <h1>Welcome to Student Exam Score Prediction</h1>
+    <p>Use AI to forecast exam performance based on your inputs. Experience smart learning guidance!</p>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <a href="/predict" class="{{ 'active' if request.path == '/predict' else '' }}">Predict Now</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Developed by Jagruti Desale</p>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.style.right = sidebar.style.right === '0px' ? '-250px' : '0px';
+    }
+  </script>
+</body>
+</html>

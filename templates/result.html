@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('{{ url_for('static', filename='images/bg_predict.jpg') }}') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        header {
+            background-color: rgba(0, 51, 102, 0.9);
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        header img {
+            height: 40px;
+            margin-right: 15px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 80px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .container p {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .score {
+            font-size: 40px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 20px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #003366;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0055aa;
+        }
+
+        footer {
+            background-color: rgba(0, 51, 102, 0.9);
+            color: white;
+            text-align: center;
+            padding: 12px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        Prediction Result
+    </header>
+
+    <div class="container">
+        <p><strong>{{ name }}</strong>'s predicted exam score is:</p>
+        <div class="score">{{ score }}</div>
+        <a href="/predict" class="btn">Make Another Prediction</a>
+    </div>
+
+    <footer>
+        &copy; 2025 | Developed by Jagruti Desale
+    </footer>
+</body>
+</html>

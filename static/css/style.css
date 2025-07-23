@@ -1,0 +1,42 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.logo {
+    height: 60px;
+}
+main {
+    padding: 40px;
+    text-align: center;
+}
+form input, form select {
+    padding: 10px;
+    width: 60%;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+button {
+    padding: 10px 20px;
+    background-color: #66ccff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+footer {
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
